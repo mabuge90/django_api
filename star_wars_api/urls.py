@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.urls import include, path
 from rest_framework import routers
-from rapidapipractice.api import views
+from django_api.api import views
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
