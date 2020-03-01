@@ -25,7 +25,7 @@ SECRET_KEY = '8f0y*9-360@u7r_53qw=0ts_z42jr#k7xp&lp!k#x+hkgr_so2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = 
+ALLOWED_HOSTS = [
     'django-sw-api.herokuapp.com'
 ]
 
