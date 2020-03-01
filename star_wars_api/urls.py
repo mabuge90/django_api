@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.urls import include, path
 from rest_framework import routers
-from django_api.api import views
+from star_wars_api.api import views
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
