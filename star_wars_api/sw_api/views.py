@@ -1,17 +1,15 @@
-from django.contrib.auth.models import User, Group
-from rest_framework import viewsets
-from .serializers import UserSerializer, GroupSerializer
+from rest_framework import generics
+from .serializers import CharacterSerializer
+from .models import Character
 
-class UserViewSet(viewsets.ModelViewSet):
+class CharacterCreateView(generics.ModelViewSet):
     """
-    API endpoint that allows users to be viewed or edited.
+    API endpoint that allows characters to be viewed or edited.
     """
-    queryset = User.objects.all().order_by('-date_joined')
-    serializer_class = UserSerializer
+    queryset = Character.objects.all()
+    serializer_class = CharacterSerializer
 
-class GroupViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint that allows groups to be viewed or edited.
-    """
-    queryset = Group.objects.all()
-    serializer_class = GroupSerializer
+    def perform_create(self, serializer):
+        """Save the post data when creating a new bucketlist."""
+        serializer.save()
+

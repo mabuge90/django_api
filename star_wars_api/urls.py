@@ -18,8 +18,7 @@ from rest_framework import routers
 from star_wars_api.sw_api import views
 
 router = routers.DefaultRouter()
-router.register(r'users', views.UserViewSet)
-router.register(r'groups', views.GroupViewSet)
+router.register(r'character-create', views.CharacterCreateView)
 # Setup automatic URL routing
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
